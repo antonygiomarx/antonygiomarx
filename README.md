@@ -1,6 +1,6 @@
 # Welcome
 
-![Card Image](./src/static/assets/images/card.png)
+![Card Image](public/assets/images/card.png)
 
 ## My Background
 

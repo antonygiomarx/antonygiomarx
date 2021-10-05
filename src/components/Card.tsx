@@ -3,7 +3,6 @@ import { FaGithub } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaRegEnvelope } from "react-icons/fa";
 
-import profile from "@static/assets/images/profile.jpg";
 import { User } from "@interfaces/User";
 
 export interface Social {
@@ -19,8 +18,10 @@ function Card({ name, title, social }: User) {
         <div className="">
           <Image
             className="w-32 mx-auto shadow-xl rounded-full"
-            src={profile}
+            src="/assets/images/profile.jpg"
             alt="Profile face"
+            width="280px"
+            height="280px"
           />
         </div>
         <div className="text-center mt-5">
