@@ -1,17 +1,7 @@
+import { Technology } from "@interfaces/Technologies";
 import { User } from "@interfaces/User";
 
-const {
-  SiNestjs,
-  SiReact,
-  SiFirebase,
-  SiNextdotjs,
-  SiTypescript,
-  SiDialogflow,
-} = require("react-icons/si");
-
-const BOOTSTRAP_FOR_SKILL_ICON = "text-4xl mx-auto inline-block";
-
-export const data = {
+export const user = {
   name: "Antony Giomar",
   title: "Fullstack Developer",
   social: {
@@ -27,27 +17,27 @@ export const data = {
   skills: [
     {
       name: "ReactJS",
-      icon: <SiReact className={BOOTSTRAP_FOR_SKILL_ICON} />,
+      skill: Technology.REACT,
     },
     {
       name: "NextJS",
-      icon: <SiNextdotjs className={BOOTSTRAP_FOR_SKILL_ICON} />,
+      skill: Technology.NEXTJS,
     },
     {
       name: "Nestjs",
-      icon: <SiNestjs className={BOOTSTRAP_FOR_SKILL_ICON} />,
+      skill: Technology.NESTJS,
     },
     {
       name: "Firebase",
-      icon: <SiFirebase className={BOOTSTRAP_FOR_SKILL_ICON} />,
+      skill: Technology.FIREBASE,
     },
     {
       name: "Typescript",
-      icon: <SiTypescript className={BOOTSTRAP_FOR_SKILL_ICON} />,
+      skill: Technology.TYPESCRIPT,
     },
     {
       name: "Dialogflow",
-      icon: <SiDialogflow className={BOOTSTRAP_FOR_SKILL_ICON} />,
+      skill: Technology.DIALOGFLOW,
     },
   ],
-} as unknown as User;
+} as User;

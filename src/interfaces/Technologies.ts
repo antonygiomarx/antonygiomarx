@@ -1,0 +1,8 @@
+export enum Technology {
+  REACT = "REACT",
+  FIREBASE = "FIREBASE",
+  NESTJS = "NESTJS",
+  TYPESCRIPT = "TYPESCRIPT",
+  NEXTJS = "NEXTJS",
+  DIALOGFLOW = "DIALOGFLOW",
+}

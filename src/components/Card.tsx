@@ -1,7 +1,5 @@
 import Image from "next/image";
-import { FaGithub } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
-import { FaRegEnvelope } from "react-icons/fa";
+import { FaGithub, FaTwitter, FaRegEnvelope } from "react-icons/fa";
 
 import { User } from "@interfaces/User";
 
@@ -36,6 +34,7 @@ function Card({ name, title, social }: User) {
               className="text-xl m-1 p-1 sm:m-2 sm:p-2 text-gray-800 hover:bg-gray-800 rounded-full hover:text-white transition-colors duration-300"
               href={social.github}
               target="_blank"
+              rel="noreferrer"
             >
               <FaGithub />
               <span className="sr-only">Github</span>
@@ -44,16 +43,16 @@ function Card({ name, title, social }: User) {
               className="text-xl m-1 p-1 sm:m-2 sm:p-2 text-blue-500 hover:bg-blue-500 rounded-full hover:text-white transition-colors duration-300"
               href={social.twitter}
               target="_blank"
+              rel="noreferrer"
             >
               <FaTwitter />
               <span className="sr-only">Twitter</span>
             </a>
             <a
               className="text-xl m-1 p-1 sm:m-2 sm:p-2 text-teal-500 hover:bg-teal-500 rounded-full hover:text-white transition-colors duration-300"
-              href={
-                "https://mail.google.com/mail/?view=cm&fs=1&to=" + social.email
-              }
+              href={`https://mail.google.com/mail/?view=cm&fs=1&to=${social.email}`}
               target="_blank"
+              rel="noreferrer"
             >
               <FaRegEnvelope />
               <span className="sr-only">Email</span>
