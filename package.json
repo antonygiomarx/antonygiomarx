@@ -9,18 +9,20 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "aos": "^2.3.4",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
+    "nanoid": "^3.1.28",
+    "next": "^11.1.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-github-btn": "^1.2.0",
-    "react-icons": "^3.11.0",
+    "react-icons": "^4.3.1",
     "react-scripts": "3.4.3"
   },
   "scripts": {
-    "start": "npm run watch:css && react-scripts start",
-    "build": "npm run watch:css && react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "watch:css": "postcss src/assets/tailwind.css -o src/assets/main.css"
+    "start": "next start",
+    "build": "next build",
+    "test": "next test",
+    "eject": "next eject",
+    "dev": "next dev"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -38,9 +40,23 @@
     ]
   },
   "devDependencies": {
-    "autoprefixer": "9.8.6",
+    "@types/aos": "^3.0.4",
+    "@types/node": "^16.10.2",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "autoprefixer": "^10.3.7",
+    "eslint": "7.2.0",
+    "eslint-config-airbnb": "18.2.1",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jsx-a11y": "6.4.1",
+    "eslint-plugin-react": "7.21.5",
+    "eslint-plugin-react-hooks": "1.7.0",
+    "normalize.css": "^8.0.1",
+    "postcss": "^8.3.9",
     "postcss-cli": "^8.1.0",
-    "tailwindcss": "^1.9.2"
+    "prettier": "^2.4.1",
+    "tailwindcss": "^2.2.16",
+    "typescript": "^4.4.3"
   },
   "peerDependencies": {
     "postcss": "^8.0.0"

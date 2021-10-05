@@ -1,16 +1,23 @@
-import React from "react";
-import profile from "../images/profile.png";
+import Image from "next/image";
 import { FaGithub } from "react-icons/fa";
-import { FaDribbble } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaRegEnvelope } from "react-icons/fa";
 
-function Card({ name, title, social: { github, dribbble, twitter, email } }) {
+import profile from "@static/assets/images/profile.jpg";
+import { User } from "@interfaces/User";
+
+export interface Social {
+  github: string;
+  twitter: string;
+  email: string;
+}
+
+function Card({ name, title, social }: User) {
   return (
     <div className="w-full">
       <div className="flex flex-col justify-center max-w-xs mx-auto bg-white shadow-xl rounded-xl p-5">
         <div className="">
-          <img
+          <Image
             className="w-32 mx-auto shadow-xl rounded-full"
             src={profile}
             alt="Profile face"
@@ -26,31 +33,26 @@ function Card({ name, title, social: { github, dribbble, twitter, email } }) {
           <div className="flex align-center justify-center mt-4">
             <a
               className="text-xl m-1 p-1 sm:m-2 sm:p-2 text-gray-800 hover:bg-gray-800 rounded-full hover:text-white transition-colors duration-300"
-              href={github}
+              href={social.github}
             >
               <FaGithub />
-              <span class="sr-only">Github</span>
-            </a>
-            <a
-              className="text-xl m-1 p-1 sm:m-2 sm:p-2 text-pink-600 hover:bg-pink-600 rounded-full hover:text-white transition-colors duration-300"
-              href={dribbble}
-            >
-              <FaDribbble />
-              <span class="sr-only">Dribble</span>
+              <span className="sr-only">Github</span>
             </a>
             <a
               className="text-xl m-1 p-1 sm:m-2 sm:p-2 text-blue-500 hover:bg-blue-500 rounded-full hover:text-white transition-colors duration-300"
-              href={twitter}
+              href={social.twitter}
             >
               <FaTwitter />
-              <span class="sr-only">Twitter</span>
+              <span className="sr-only">Twitter</span>
             </a>
             <a
               className="text-xl m-1 p-1 sm:m-2 sm:p-2 text-teal-500 hover:bg-teal-500 rounded-full hover:text-white transition-colors duration-300"
-              href={"https://mail.google.com/mail/?view=cm&fs=1&to=" + email}
+              href={
+                "https://mail.google.com/mail/?view=cm&fs=1&to=" + social.email
+              }
             >
               <FaRegEnvelope />
-              <span class="sr-only">Email</span>
+              <span className="sr-only">Email</span>
             </a>
           </div>
         </div>

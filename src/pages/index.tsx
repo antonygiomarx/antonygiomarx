@@ -1,14 +1,13 @@
-import React, { useEffect } from "react";
-import "./App.css";
-import About from "./partials/About";
-import Card from "./partials/Card";
-import Footer from "./partials/Footer";
-import Skills from "./partials/Skills";
-import data from "./assets/data";
+import { useEffect } from "react";
 import AOS from "aos";
-import "aos/dist/aos.css";
 
-function App() {
+import About from "@components/About";
+import Card from "@components/Card";
+import Footer from "@components/Footer";
+import Skills from "@components/Skills";
+import { data } from "@config/config";
+
+function Index() {
   useEffect(() => {
     AOS.init({
       once: true,
@@ -22,9 +21,10 @@ function App() {
       <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
         <About title={data.about.title} description={data.about.description} />
         <Skills skills={data.skills} />
-        <Footer github={data.social.github} />
+        <Footer />
       </div>
     </div>
   );
 }
-export default App;
+
+export default Index;

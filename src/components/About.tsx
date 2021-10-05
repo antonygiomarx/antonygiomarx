@@ -1,6 +1,9 @@
-import React from "react";
+export interface About {
+  title: string;
+  description: string;
+}
 
-function About({ title, description }) {
+function About({ title, description }: About) {
   return (
     <div className="max-w-4xl mx-auto mt-16">
       <p className="text-2xl md:text-4xl font-bold text-center">{title}</p>
