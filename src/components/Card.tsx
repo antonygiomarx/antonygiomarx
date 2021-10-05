@@ -35,6 +35,7 @@ function Card({ name, title, social }: User) {
             <a
               className="text-xl m-1 p-1 sm:m-2 sm:p-2 text-gray-800 hover:bg-gray-800 rounded-full hover:text-white transition-colors duration-300"
               href={social.github}
+              target="_blank"
             >
               <FaGithub />
               <span className="sr-only">Github</span>
@@ -42,6 +43,7 @@ function Card({ name, title, social }: User) {
             <a
               className="text-xl m-1 p-1 sm:m-2 sm:p-2 text-blue-500 hover:bg-blue-500 rounded-full hover:text-white transition-colors duration-300"
               href={social.twitter}
+              target="_blank"
             >
               <FaTwitter />
               <span className="sr-only">Twitter</span>
@@ -51,6 +53,7 @@ function Card({ name, title, social }: User) {
               href={
                 "https://mail.google.com/mail/?view=cm&fs=1&to=" + social.email
               }
+              target="_blank"
             >
               <FaRegEnvelope />
               <span className="sr-only">Email</span>

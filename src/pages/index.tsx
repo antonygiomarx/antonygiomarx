@@ -35,7 +35,7 @@ function Index() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Antony Giomar | Fullstack Develope"
+          content="Antony Giomar | Fullstack Developer"
         />
         <meta name="twitter:description" content="Typescript wizard" />
         <meta
