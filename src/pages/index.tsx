@@ -6,7 +6,7 @@ import About from "@components/About";
 import Card from "@components/Card";
 import Footer from "@components/Footer";
 import Skills from "@components/Skills";
-import { user } from "@config/user";
+import { useUser } from "@hooks/useUser";
 
 function Index() {
   useEffect(() => {
@@ -14,7 +14,10 @@ function Index() {
       once: true,
     });
   });
+  const { user } = useUser();
+
   const { name, social, title, skills, about } = user;
+
   return (
     <>
       <Head>
