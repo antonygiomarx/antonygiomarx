@@ -7,6 +7,7 @@ import Card from "@components/Card";
 import Footer from "@components/Footer";
 import Skills from "@components/Skills";
 import { useUser } from "@hooks/useUser";
+import Portfolio from "@components/Portfolio";
 
 function Index() {
   useEffect(() => {
@@ -126,6 +127,7 @@ function Index() {
         <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
           <About title={about.title} description={about.description} />
           <Skills skills={skills} />
+          <Portfolio />
           <Footer />
         </div>
       </div>
