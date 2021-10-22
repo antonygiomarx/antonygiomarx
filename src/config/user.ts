@@ -41,3 +41,26 @@ export const user = {
     },
   ],
 } as User;
+
+interface Project {
+  name: string;
+  url: string;
+  imageUrl: string;
+  description: string;
+}
+
+export const projects = [
+  {
+    name: "Mi Ventecita",
+    description:
+      "E-Commerce pensado para la administración de negocios pequeños.",
+    imageUrl: "",
+    url: "https://github.com/antonygiomarx/mi_ventecita",
+  },
+  {
+    name: "Backend TODO App",
+    description: "",
+    imageUrl: "",
+    url: "https://github.com/antonygiomarx/todo-app-docker-nestjs-postgres-swagger-jwt-prisma",
+  },
+] as Project[];

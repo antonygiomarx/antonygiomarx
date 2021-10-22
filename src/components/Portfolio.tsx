@@ -1,10 +1,7 @@
-import { UserRepository } from "@interfaces/User";
-import { fetcher } from "@services/fetcher.service";
-import { GetServerSideProps, GetServerSidePropsResult } from "next";
-import Image from "next/image";
-import { FaGithub, FaRegEnvelope, FaTwitter } from "react-icons/fa";
-import useSWR from "swr";
+import { nanoid as uuid } from "nanoid";
+import { FaGithub } from "react-icons/fa";
 
+import { projects } from "@config/user";
 interface CardProjectProps {
   title: string;
   bgImage: string;
@@ -12,6 +9,9 @@ interface CardProjectProps {
   technologies: [];
   url: string;
 }
+
+const defaultImageUrl =
+  "https://github.com/antonygiomarx/react-tailwind-portfolio/raw/main/demo.png";
 
 function CardProject({
   title,
@@ -21,19 +21,19 @@ function CardProject({
   url,
 }: CardProjectProps) {
   return (
-    <div className="w-full flex-1">
-      <div className="flex flex-col justify-center max-w-xs mx-auto bg-white shadow-xl rounded-xl p-5">
-        <div className="">
-          <img
-            className="w-32 mx-auto shadow-xl rounded-full"
-            src={
-              "https://github.com/antonygiomarx/react-tailwind-portfolio/raw/main/demo.png"
-            }
-            alt="Profile face"
-            width="280px"
-            height="280px"
-          />
-        </div>
+    <div className="w-64 h-full m-4">
+      <div className="flex flex-col mt-3 justify-center max-w-xs mx-auto bg-white shadow-xl rounded-xl p-5">
+        {bgImage && (
+          <div className="">
+            <img
+              className="w-32 mx-auto shadow-xl rounded-full"
+              src={bgImage}
+              alt="Profile face"
+              width="280px"
+              height="280px"
+            />
+          </div>
+        )}
         <div className="text-center mt-5">
           <p className="text-xl sm:text-2xl font-semibold text-gray-900 hover:text-gray-800">
             {title}
@@ -56,31 +56,17 @@ function CardProject({
 }
 
 function Portfolio() {
-  const {
-    data: repositories,
-    error,
-    isValidating,
-  } = useSWR<UserRepository[]>(
-    "https://api.github.com/users/antonygiomarx/repos",
-    fetcher
-  );
-
-  if (isValidating) {
-    return <h1>"loading..."</h1>;
-  }
-  console.log(repositories);
-
   return (
-    <div className="mx-auto mt-16 max-w-full w-full h-full">
+    <div className="m-4">
       <p className="text-2xl md:text-4xl font-bold text-center">Projects</p>
-      <section className="m-4 grid sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 sm:grid-rows-6 md:grid-rows-4 lg:grid-rows-3">
-        {repositories.map(({ description, html_url, id, name }) => (
+      <section className="flex flex-wrap items-center justify-center">
+        {projects.map(({ description, name, imageUrl, url }) => (
           <CardProject
             description={description}
-            bgImage=""
+            bgImage={imageUrl}
             title={name}
-            url={html_url}
-            key={id}
+            url={url}
+            key={uuid()}
             technologies={[]}
           />
         ))}
